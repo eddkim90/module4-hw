@@ -80,4 +80,27 @@ WARNING!!! WARNING!!!
         console.log(mapNames[i]);
     }
 
+    /** BONUS ASSIGNMENT PART 3 */
+    var mapReduce = function mapReduce(obj, name) {
+        if (name.charAt(0).toLowerCase() === 'j') {
+            obj.bye.push(byeSpeaker.speakSimple(name));
+            return obj;
+        } else {
+            obj.hello.push(helloSpeaker.speakSimple(name));
+            return obj;
+        }
+    };
+
+    // Call Reduce Function
+    var reducedObj = names.reduce(mapReduce, { bye: [], hello: [] });
+
+    // Print out results
+    for (var i = 0; i < reducedObj.bye.length; i++) {
+        console.log(reducedObj.bye[i]);
+    }
+    for (var i = 0; i < reducedObj.hello.length; i++) {
+        console.log(reducedObj.hello[i]);
+    }
+
+
 })(window);
