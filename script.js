@@ -69,12 +69,15 @@ WARNING!!! WARNING!!!
     /** ASSIGNMENT PART 2 */
     var mapFunc = function mapFunc(name) {
         if (name.charAt(0).toLowerCase() === 'j') {
-            console.log(byeSpeaker.speakSimple(name));
+            return byeSpeaker.speakSimple(name);
         } else {
-            console.log(helloSpeaker.speakSimple(name));
+            return helloSpeaker.speakSimple(name);
         }
     };
 
     var mapNames = names.map(mapFunc);
+    for (var i = 0; i < mapNames.length; i++) {
+        console.log(mapNames[i]);
+    }
 
 })(window);
